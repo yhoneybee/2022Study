@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'A -> B
+  m_Text: 'A >> B
 
     Length'
 --- !u!1 &8504387706848474399

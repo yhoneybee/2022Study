@@ -10,4 +10,5 @@ public static class K
     public static List<Bridge> bridges = new List<Bridge>();
     public static readonly int INF = 1000000;
     public static PathFind pathFind;
+    public static Bridge selectBridge;
 }

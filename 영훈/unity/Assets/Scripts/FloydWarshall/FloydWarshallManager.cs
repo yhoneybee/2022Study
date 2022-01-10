@@ -1,3 +1,5 @@
+
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,8 +109,17 @@ public class FloydWarshallManager : Singletone<FloydWarshallManager>
 
         foreach (var bridge in K.bridges)
         {
-            w[bridge.oVertex.ID - 1][bridge.tVertex.ID - 1] = bridge.dis;
-            pi[bridge.oVertex.ID - 1][bridge.tVertex.ID - 1] = bridge.oVertex.ID;
+            if (bridge.state == eSTATE.Right || bridge.state == eSTATE.BothSides)
+            {
+                w[bridge.oVertex.ID - 1][bridge.tVertex.ID - 1] = bridge.dis;
+                pi[bridge.oVertex.ID - 1][bridge.tVertex.ID - 1] = bridge.oVertex.ID;
+            }
+
+            if (bridge.state == eSTATE.Reverce || bridge.state == eSTATE.BothSides)
+            {
+                w[bridge.tVertex.ID - 1][bridge.oVertex.ID - 1] = bridge.dis;
+                pi[bridge.tVertex.ID - 1][bridge.oVertex.ID - 1] = bridge.tVertex.ID;
+            }
         }
 
         for (int i = 0; i < K.vertices.Count; i++)

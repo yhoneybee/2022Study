@@ -36,9 +36,23 @@ public class BridgeOption : MonoBehaviour
         btnCreate.onClick.AddListener(() =>
         {
             if (inputDistance.text == "") return;
-            FloydWarshallManager.Instance.CreateBridge();
+            if (!ddOriginVertex.gameObject.activeSelf && !ddToVertex.gameObject.activeSelf)
+            {
+                K.selectBridge.dis = System.Convert.ToInt32(inputDistance.text);
+            }
+            else FloydWarshallManager.Instance.CreateBridge();
+
             gameObject.SetActive(false);
+            ddOriginVertex.gameObject.SetActive(true);
+            ddToVertex.gameObject.SetActive(true);
         });
+    }
+
+    public void SetDistance()
+    {
+        ddOriginVertex.gameObject.SetActive(false);
+        ddToVertex.gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 
     private void Update()
