@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PathFind : MonoBehaviour
@@ -36,5 +37,16 @@ public class PathFind : MonoBehaviour
             FloydWarshallManager.Instance.FloydWarshall();
             gameObject.SetActive(false);
         });
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject() == false)
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 }

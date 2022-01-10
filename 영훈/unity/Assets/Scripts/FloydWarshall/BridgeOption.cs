@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BridgeOption : MonoBehaviour
@@ -38,5 +39,16 @@ public class BridgeOption : MonoBehaviour
             FloydWarshallManager.Instance.CreateBridge();
             gameObject.SetActive(false);
         });
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject() == false)
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 }
