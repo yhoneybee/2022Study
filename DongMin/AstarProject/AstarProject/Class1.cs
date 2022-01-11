@@ -10,13 +10,14 @@ namespace AstarProject
     {
         //좌표값
         public int X;
-        public int Y;  
+        public int Y;
         //출발점으로부터의 거리
         public int G;
         //목적지로부터의 예상 거리
         public int H;
         //G+H
         public int F;
+        //이전 타일을 저장하는 데 사용되며 목적지에 도달할 때까지 경로 자체를 추적하는 데 필요
         public Location Parent;
     }
 
@@ -30,9 +31,9 @@ namespace AstarProject
             string[] map = new string[]
             {
                 "+------------+",
-                "|   X        |",
-                "|    A  X   B|",
-                "|      X     |",
+                "|   XX       |",
+                "|    AX X  XB|",
+                "|    XX     X|",
                 "|            |",
                 "|            |",
                 "|            |",
@@ -60,23 +61,23 @@ namespace AstarProject
 
             while (openList.Count > 0)
             {
-                // get the square with the lowest F score  
+                // 반복문에서 F점수가 제일 낮은 타일을 검색함
                 var lowest = openList.Min(l => l.F);
                 current = openList.First(l => l.F == lowest);
 
-                // add the current square to the closed list  
+                // 현재 타일을 closedList에 넣어서 지나갔음을 저장
                 closedList.Add(current);
 
-                // show current square on the map  
+                // 지도에 지나갔음을 . 으로 표시함
                 Console.SetCursorPosition(current.X, current.Y);
                 Console.Write('.');
                 Console.SetCursorPosition(current.X, current.Y);
                 System.Threading.Thread.Sleep(SLEEP_TIME);
 
-                // remove it from the open list  
+                // openList에서 현재 타일을 삭제함
                 openList.Remove(current);
 
-                // if we added the destination to the closed list, we've found a path  
+                // 현재타일이 목적지에 도달했다면 반복문이 종료됨
                 if (closedList.FirstOrDefault(l => l.X == target.X && l.Y == target.Y) != null)
                     break;
 
@@ -85,28 +86,28 @@ namespace AstarProject
 
                 foreach (var adjacentSquare in adjacentSquares)
                 {
-                    // if this adjacent square is already in the closed list, ignore it  
+                    // 만약 이미 지나간 타일이 있다면 무시한다
                     if (closedList.FirstOrDefault(l => l.X == adjacentSquare.X
                         && l.Y == adjacentSquare.Y) != null)
                         continue;
 
-                    // if it's not in the open list...  
+                    // openList에 타일이 없다면?
                     if (openList.FirstOrDefault(l => l.X == adjacentSquare.X
                         && l.Y == adjacentSquare.Y) == null)
                     {
-                        // compute its score, set the parent  
+                        // 점수를 매기고 Parent를 설정해둠
                         adjacentSquare.G = g;
                         adjacentSquare.H = ComputeHScore(adjacentSquare.X, adjacentSquare.Y, target.X, target.Y);
                         adjacentSquare.F = adjacentSquare.G + adjacentSquare.H;
                         adjacentSquare.Parent = current;
 
-                        // and add it to the open list  
+                        // openList에 넣음
                         openList.Insert(0, adjacentSquare);
                     }
                     else
                     {
-                        // test if using the current G score makes the adjacent square's F score  
-                        // lower, if yes update the parent because it means it's a better path  
+                        // 현재의 g점수를 더했을때 근처 패턴의 F보다 작을경우
+                        // 근처 패턴의 점수를 현재의 g점수를 더했을때로 바꿔주고 parent에 현재 타일을 저장
                         if (g + adjacentSquare.H < adjacentSquare.F)
                         {
                             adjacentSquare.G = g;
@@ -119,7 +120,7 @@ namespace AstarProject
 
             Location end = current;
 
-            // assume path was found; let's show it  
+            //길을 찾았다면 _로 표시해준다
             while (current != null)
             {
                 Console.SetCursorPosition(current.X, current.Y);
