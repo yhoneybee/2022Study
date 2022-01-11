@@ -1,0 +1,7 @@
+C:\Users\rusep\source\repos\AstarProject\AstarProject\bin\Debug\AstarProject.exe.config
+C:\Users\rusep\source\repos\AstarProject\AstarProject\bin\Debug\AstarProject.exe
+C:\Users\rusep\source\repos\AstarProject\AstarProject\bin\Debug\AstarProject.pdb
+C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.csprojAssemblyReference.cache
+C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.csproj.CoreCompileInputs.cache
+C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.exe
+C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.pdb
