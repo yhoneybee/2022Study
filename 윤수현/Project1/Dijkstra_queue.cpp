@@ -18,7 +18,7 @@ void dijkstra(int start)
 	while (!pq.empty())
 	{
 		int current = pq.top().first;
-		int distance = -pq.top().second;
+		int distance = -pq.top().second; // 짧은 것이 먼저 오도록 음수 처리
 		pq.pop();
 		if (d[current] < distance) continue;	// 만약 전노드의 거리가 현재 리턴한 거리 보다 작으면 돌아감
 		for (int i = 0; i < a[current].size(); i++)	// a인접리스트의 current번째 배열의 크기만큼 반복함
