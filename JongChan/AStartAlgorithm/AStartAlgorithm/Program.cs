@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-//4방향 이동 A*
 namespace AStartAlgorithm
 {
     public class Node //노드 클래스
@@ -50,6 +49,8 @@ namespace AStartAlgorithm
                     }
                 }
                 
+                Console.WriteLine($"{curPos.X} {curPos.Y}");
+                
                 openNodes.Remove(curPos);
                 closeNodes.Add(curPos);
 
@@ -84,6 +85,12 @@ namespace AStartAlgorithm
                 AddOpenList(curPos.X + 1, curPos.Y);
                 AddOpenList(curPos.X, curPos.Y - 1);
                 AddOpenList(curPos.X - 1, curPos.Y);
+                
+                //8방향
+                AddOpenList(curPos.X - 1, curPos.Y - 1);
+                AddOpenList(curPos.X - 1, curPos.Y + 1);
+                AddOpenList(curPos.X + 1, curPos.Y - 1);
+                AddOpenList(curPos.X + 1, curPos.Y + 1);
             }
         }
 
