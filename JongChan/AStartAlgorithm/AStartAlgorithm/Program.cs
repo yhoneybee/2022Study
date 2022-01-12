@@ -20,7 +20,7 @@ namespace AStartAlgorithm
 
     internal class Program
     {
-        private static Node[,] node = new Node[7, 5];
+        private static Node[,] node;
         private static Node startPos;
         private static Node endPos;
         private static Node curPos;
@@ -49,7 +49,7 @@ namespace AStartAlgorithm
                         curPos = nodes[i];
                     }
                 }
-
+                
                 openNodes.Remove(curPos);
                 closeNodes.Add(curPos);
 
@@ -89,6 +89,8 @@ namespace AStartAlgorithm
 
         private static void Setup() //setup이다
         {
+            node = new Node[sellXSize, sellYSize];
+            
             for (int y = 0; y < sellYSize; y++)
             {
                 for (int x = 0; x < sellXSize; x++)
@@ -124,6 +126,7 @@ namespace AStartAlgorithm
                 {
                     NeighborNode.G = MoveCost;
                     NeighborNode.H = (Math.Abs(NeighborNode.X - endPos.X) + Math.Abs(NeighborNode.Y - endPos.Y)) * 10;
+                    NeighborNode.F = NeighborNode.G + NeighborNode.H;
                     NeighborNode.parent = curPos;
                     
                     openNodes.Add(NeighborNode);
