@@ -5,3 +5,10 @@ C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.csp
 C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.csproj.CoreCompileInputs.cache
 C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.exe
 C:\Users\rusep\source\repos\AstarProject\AstarProject\obj\Debug\AstarProject.pdb
+D:\Study\DongMin\AstarProject\AstarProject\bin\Debug\AstarProject.exe.config
+D:\Study\DongMin\AstarProject\AstarProject\bin\Debug\AstarProject.exe
+D:\Study\DongMin\AstarProject\AstarProject\bin\Debug\AstarProject.pdb
+D:\Study\DongMin\AstarProject\AstarProject\obj\Debug\AstarProject.csprojAssemblyReference.cache
+D:\Study\DongMin\AstarProject\AstarProject\obj\Debug\AstarProject.csproj.CoreCompileInputs.cache
+D:\Study\DongMin\AstarProject\AstarProject\obj\Debug\AstarProject.exe
+D:\Study\DongMin\AstarProject\AstarProject\obj\Debug\AstarProject.pdb
