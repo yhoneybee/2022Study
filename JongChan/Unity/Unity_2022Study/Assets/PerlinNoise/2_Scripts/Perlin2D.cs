@@ -22,9 +22,11 @@ namespace MyCode
             for (int i = 0; i < xSize; i++)
             {
                 t += softness;
+                float x;
 
-                // float x = noise.cnoise((float2) t);
-                float x = SmoothNoise_1D(t);
+                x = noise.cnoise((float2) t);
+                // x = SmoothNoise_1D(t);
+                // x = Mathf.PerlinNoise(i, t);
                 
                 Instantiate(tile, new Vector3(i, (x * 100), 0), Quaternion.identity).transform.parent = transform;
             }
