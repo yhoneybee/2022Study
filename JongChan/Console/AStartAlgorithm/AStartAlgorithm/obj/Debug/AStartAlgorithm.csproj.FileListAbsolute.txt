@@ -1,0 +1,7 @@
+C:\GitProject\2022Study\JongChan\AStartAlgorithm\AStartAlgorithm\bin\Debug\AStartAlgorithm.exe
+C:\GitProject\2022Study\JongChan\AStartAlgorithm\AStartAlgorithm\bin\Debug\AStartAlgorithm.pdb
+C:\GitProject\2022Study\JongChan\AStartAlgorithm\AStartAlgorithm\obj\Debug\AStartAlgorithm.csproj.AssemblyReference.cache
+C:\GitProject\2022Study\JongChan\AStartAlgorithm\AStartAlgorithm\obj\Debug\AStartAlgorithm.csproj.SuggestedBindingRedirects.cache
+C:\GitProject\2022Study\JongChan\AStartAlgorithm\AStartAlgorithm\obj\Debug\AStartAlgorithm.csproj.CoreCompileInputs.cache
+C:\GitProject\2022Study\JongChan\AStartAlgorithm\AStartAlgorithm\obj\Debug\AStartAlgorithm.exe
+C:\GitProject\2022Study\JongChan\AStartAlgorithm\AStartAlgorithm\obj\Debug\AStartAlgorithm.pdb
