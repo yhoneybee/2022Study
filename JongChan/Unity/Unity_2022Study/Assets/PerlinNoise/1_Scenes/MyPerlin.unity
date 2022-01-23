@@ -152,13 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56edfed3247e4ca0a47ea8bdc2c40c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtPrefab: {fileID: 1859109239774115447, guid: e9ae6ba587a64094db15486ba378c1ff, type: 3}
-  grassPrefab: {fileID: 8227409033325879247, guid: 6a84f5f9dba5c37429dbd5b99bb4c262, type: 3}
-  Seed: 0
-  minX: -16
-  maxX: 16
-  minY: -10
-  maxY: 10
+  dirtPrefab: {fileID: 8227409033325879247, guid: 6a84f5f9dba5c37429dbd5b99bb4c262, type: 3}
+  grassPrefab: {fileID: 1859109239774115447, guid: e9ae6ba587a64094db15486ba378c1ff, type: 3}
+  Seed: 1
+  minX: -100
+  maxX: 100
+  minY: -20
+  maxY: 20
 --- !u!4 &657057433
 Transform:
   m_ObjectHideFlags: 0
@@ -452,8 +452,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
