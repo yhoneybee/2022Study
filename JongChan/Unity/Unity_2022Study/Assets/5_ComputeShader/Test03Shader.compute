@@ -1,0 +1,12 @@
+#pragma kernel CSMain
+
+RWTexture2D<float4> ResultBufferTexture;
+
+float4 Color;
+float TimeVar;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    ResultBufferTexture[id.xy] = (id.x & id.y) * Color * TimeVar;
+}
